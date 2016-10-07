@@ -55,7 +55,7 @@ namespace VSTOWordAddin2013And16 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Tools.Office.ProgrammingModel.dll", "14.0.0.0")]
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Never)]
         protected override void FinishInitialization() {
-            //this.InternalStartup();
+            this.InternalStartup();
             this.OnStartup();
         }
         
