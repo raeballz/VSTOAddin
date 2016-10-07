@@ -75,6 +75,14 @@
             this.contactDetails.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button4
+            // 
+            button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            button4.Label = "Add Age Tag";
+            button4.Name = "button4";
+            button4.OfficeImageId = "NumberInsert";
+            button4.ShowImage = true;
+            // 
             // PatientDetailsTab
             // 
             this.PatientDetailsTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;

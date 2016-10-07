@@ -92,5 +92,9 @@ namespace VSTOWordAddin2013And16
             Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
             currentRange.Text = "[[PATIENTMOBILENUMBER]]";
         }
+
+        private void button9_Click(object sender, RibbonControlEventArgs e)
+        {
+        }
     }
 }
