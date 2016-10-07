@@ -34,6 +34,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomRibbon));
             this.PatientDetailsTab = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.tab2 = this.Factory.CreateRibbonTab();
@@ -42,6 +43,8 @@
             this.button1 = this.Factory.CreateRibbonButton();
             this.button2 = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.group3 = this.Factory.CreateRibbonGroup();
             this.PatientDetailsTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.tab2.SuspendLayout();
@@ -53,13 +56,15 @@
             // 
             this.PatientDetailsTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.PatientDetailsTab.Groups.Add(this.group1);
+            this.PatientDetailsTab.Groups.Add(this.group2);
+            this.PatientDetailsTab.Groups.Add(this.group3);
             this.PatientDetailsTab.Label = "Patient Details";
             this.PatientDetailsTab.Name = "PatientDetailsTab";
             // 
             // group1
             // 
             this.group1.Items.Add(this.buttonGroup1);
-            this.group1.Label = "Name Details";
+            this.group1.Label = "Personal Details";
             this.group1.Name = "group1";
             // 
             // tab2
@@ -82,18 +87,35 @@
             // 
             // button1
             // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Label = "Add Forename";
             this.button1.Name = "button1";
+            this.button1.ShowImage = true;
             // 
             // button2
             // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Label = "Add Middle Name(s)";
             this.button2.Name = "button2";
+            this.button2.ShowImage = true;
             // 
             // button3
             // 
+            this.button3.Image = global::VSTOWordAddin2013And16.Properties.Resources._1475855936_number_three;
             this.button3.Label = "Add Surname";
             this.button3.Name = "button3";
+            this.button3.ShowImage = true;
+            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
+            // 
+            // group2
+            // 
+            this.group2.Label = "Address Details";
+            this.group2.Name = "group2";
+            // 
+            // group3
+            // 
+            this.group3.Label = "group3";
+            this.group3.Name = "group3";
             // 
             // CustomRibbon
             // 
@@ -127,6 +149,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
     }
 
     partial class ThisRibbonCollection

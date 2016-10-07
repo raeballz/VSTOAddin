@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSTOWordAddin2013And16", "VSTOWordAddin2013And16\VSTOWordAddin2013And16.csproj", "{11A1D6B1-3BE5-4B2B-862A-C54E20D024A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSTOWordAddin.Core", "VSTOWordAddin.Core\VSTOWordAddin.Core.csproj", "{AC118178-A7EF-430F-9D99-3D0B4EDEB388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VSTOWordAddin2010", "VSTOWordAddin2010\VSTOWordAddin2010.csproj", "{119CC330-E515-40DB-BBB9-916DBAA70C2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{11A1D6B1-3BE5-4B2B-862A-C54E20D024A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11A1D6B1-3BE5-4B2B-862A-C54E20D024A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11A1D6B1-3BE5-4B2B-862A-C54E20D024A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC118178-A7EF-430F-9D99-3D0B4EDEB388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC118178-A7EF-430F-9D99-3D0B4EDEB388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC118178-A7EF-430F-9D99-3D0B4EDEB388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC118178-A7EF-430F-9D99-3D0B4EDEB388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{119CC330-E515-40DB-BBB9-916DBAA70C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119CC330-E515-40DB-BBB9-916DBAA70C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119CC330-E515-40DB-BBB9-916DBAA70C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119CC330-E515-40DB-BBB9-916DBAA70C2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

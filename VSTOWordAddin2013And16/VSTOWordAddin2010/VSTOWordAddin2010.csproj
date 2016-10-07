@@ -22,11 +22,11 @@
     <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11A1D6B1-3BE5-4B2B-862A-C54E20D024A6}</ProjectGuid>
+    <ProjectGuid>{119CC330-E515-40DB-BBB9-916DBAA70C2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <RootNamespace>VSTOWordAddin2013And16</RootNamespace>
-    <AssemblyName>VSTOWordAddin2013And16</AssemblyName>
+    <RootNamespace>VSTOWordAddin2010</RootNamespace>
+    <AssemblyName>VSTOWordAddin2010</AssemblyName>
     <LoadBehavior>3</LoadBehavior>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
@@ -129,11 +129,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <Private>False</Private>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </Reference>
@@ -152,35 +152,34 @@
     can be found.
   -->
   <ItemGroup>
-    <Compile Include="CustomRibbon.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CustomRibbon.Designer.cs">
-      <DependentUpon>CustomRibbon.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <EmbeddedResource Include="CustomRibbon.resx">
-      <DependentUpon>CustomRibbon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ribbon1.resx">
+      <DependentUpon>Ribbon1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Ribbon1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ribbon1.Designer.cs">
+      <DependentUpon>Ribbon1.cs</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>
@@ -192,25 +191,7 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
-    <None Include="VSTOWordAddin2013And16_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\VSTOWordAddin.Core\VSTOWordAddin.Core.csproj">
-      <Project>{ac118178-a7ef-430f-9d99-3d0b4edeb388}</Project>
-      <Name>VSTOWordAddin.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Icons\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1475855919_number-one.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1475855926_number-two.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1475855936_number-three.png" />
+    <None Include="VSTOWordAddin2010_TemporaryKey.pfx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -220,10 +201,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>VSTOWordAddin2013And16_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>VSTOWordAddin2010_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8EEB322D714582BAE6AB9A61F666E28E566AF0D2</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6AE446F4363ECCAEE40BA0493CA301E57E043D48</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -233,8 +214,8 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\15.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
-        <Host Name="Word" GeneratedCodeNamespace="VSTOWordAddin2013And16" IconIndex="0">
+        <ProjectProperties HostName="Word" HostPackage="{20A848B8-E01F-4801-962E-25DB0FF57389}" OfficeVersion="14.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\14.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="VSTOWordAddin2010" IconIndex="0">
           <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
