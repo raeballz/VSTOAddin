@@ -32,5 +32,9 @@ namespace VSTOWordAddin2013And16
         {
 
         }
+
+        private void button9_Click(object sender, RibbonControlEventArgs e)
+        {
+        }
     }
 }

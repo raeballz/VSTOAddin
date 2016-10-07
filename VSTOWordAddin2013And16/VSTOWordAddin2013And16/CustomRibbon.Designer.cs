@@ -47,14 +47,14 @@
             this.tab2 = this.Factory.CreateRibbonTab();
             this.tab1 = this.Factory.CreateRibbonTab();
             this.PatientPersonalDetails = this.Factory.CreateRibbonTab();
+            this.group6 = this.Factory.CreateRibbonGroup();
+            this.button9 = this.Factory.CreateRibbonButton();
             this.group4 = this.Factory.CreateRibbonGroup();
             this.button5 = this.Factory.CreateRibbonButton();
             this.group5 = this.Factory.CreateRibbonGroup();
             this.button6 = this.Factory.CreateRibbonButton();
             this.button7 = this.Factory.CreateRibbonButton();
             this.button8 = this.Factory.CreateRibbonButton();
-            this.group6 = this.Factory.CreateRibbonGroup();
-            this.button9 = this.Factory.CreateRibbonButton();
             button4 = this.Factory.CreateRibbonButton();
             this.PatientDetailsTab.SuspendLayout();
             this.group1.SuspendLayout();
@@ -62,10 +62,18 @@
             this.tab2.SuspendLayout();
             this.tab1.SuspendLayout();
             this.PatientPersonalDetails.SuspendLayout();
+            this.group6.SuspendLayout();
             this.group4.SuspendLayout();
             this.group5.SuspendLayout();
-            this.group6.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // button4
+            // 
+            button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            button4.Label = "Add Age Tag";
+            button4.Name = "button4";
+            button4.OfficeImageId = "NumberInsert";
+            button4.ShowImage = true;
             // 
             // PatientDetailsTab
             // 
@@ -137,20 +145,27 @@
             this.PatientPersonalDetails.Label = "Patient Personal Details";
             this.PatientPersonalDetails.Name = "PatientPersonalDetails";
             // 
+            // group6
+            // 
+            this.group6.Items.Add(this.button9);
+            this.group6.Label = "Replace Tags";
+            this.group6.Name = "group6";
+            // 
+            // button9
+            // 
+            this.button9.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button9.Label = "Replace Tags";
+            this.button9.Name = "button9";
+            this.button9.OfficeImageId = "ReplaceDialog";
+            this.button9.ShowImage = true;
+            this.button9.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button9_Click);
+            // 
             // group4
             // 
             this.group4.Items.Add(button4);
             this.group4.Items.Add(this.button5);
             this.group4.Label = "Age";
             this.group4.Name = "group4";
-            // 
-            // button4
-            // 
-            button4.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            button4.Label = "Add Age Tag";
-            button4.Name = "button4";
-            button4.OfficeImageId = "NumberInsert";
-            button4.ShowImage = true;
             // 
             // button5
             // 
@@ -190,20 +205,6 @@
             this.button8.OfficeImageId = "MailMergeGotToLastRecord";
             this.button8.ShowImage = true;
             // 
-            // group6
-            // 
-            this.group6.Items.Add(this.button9);
-            this.group6.Label = "Replace Tags";
-            this.group6.Name = "group6";
-            // 
-            // button9
-            // 
-            this.button9.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button9.Label = "Replace Tags";
-            this.button9.Name = "button9";
-            this.button9.OfficeImageId = "ReplaceDialog";
-            this.button9.ShowImage = true;
-            // 
             // CustomRibbon
             // 
             this.Name = "CustomRibbon";
@@ -222,12 +223,12 @@
             this.tab1.PerformLayout();
             this.PatientPersonalDetails.ResumeLayout(false);
             this.PatientPersonalDetails.PerformLayout();
+            this.group6.ResumeLayout(false);
+            this.group6.PerformLayout();
             this.group4.ResumeLayout(false);
             this.group4.PerformLayout();
             this.group5.ResumeLayout(false);
             this.group5.PerformLayout();
-            this.group6.ResumeLayout(false);
-            this.group6.PerformLayout();
             this.ResumeLayout(false);
 
         }
