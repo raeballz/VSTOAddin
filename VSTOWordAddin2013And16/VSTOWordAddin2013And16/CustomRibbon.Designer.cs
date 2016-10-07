@@ -53,6 +53,8 @@
             this.button6 = this.Factory.CreateRibbonButton();
             this.button7 = this.Factory.CreateRibbonButton();
             this.button8 = this.Factory.CreateRibbonButton();
+            this.group6 = this.Factory.CreateRibbonGroup();
+            this.button9 = this.Factory.CreateRibbonButton();
             button4 = this.Factory.CreateRibbonButton();
             this.PatientDetailsTab.SuspendLayout();
             this.group1.SuspendLayout();
@@ -62,6 +64,7 @@
             this.PatientPersonalDetails.SuspendLayout();
             this.group4.SuspendLayout();
             this.group5.SuspendLayout();
+            this.group6.SuspendLayout();
             this.SuspendLayout();
             // 
             // PatientDetailsTab
@@ -128,6 +131,7 @@
             // 
             // PatientPersonalDetails
             // 
+            this.PatientPersonalDetails.Groups.Add(this.group6);
             this.PatientPersonalDetails.Groups.Add(this.group4);
             this.PatientPersonalDetails.Groups.Add(this.group5);
             this.PatientPersonalDetails.Label = "Patient Personal Details";
@@ -186,6 +190,20 @@
             this.button8.OfficeImageId = "MailMergeGotToLastRecord";
             this.button8.ShowImage = true;
             // 
+            // group6
+            // 
+            this.group6.Items.Add(this.button9);
+            this.group6.Label = "Replace Tags";
+            this.group6.Name = "group6";
+            // 
+            // button9
+            // 
+            this.button9.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button9.Label = "Replace Tags";
+            this.button9.Name = "button9";
+            this.button9.OfficeImageId = "ReplaceDialog";
+            this.button9.ShowImage = true;
+            // 
             // CustomRibbon
             // 
             this.Name = "CustomRibbon";
@@ -208,6 +226,8 @@
             this.group4.PerformLayout();
             this.group5.ResumeLayout(false);
             this.group5.PerformLayout();
+            this.group6.ResumeLayout(false);
+            this.group6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -230,6 +250,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button6;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button7;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button8;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group6;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button9;
     }
 
     partial class ThisRibbonCollection
