@@ -201,16 +201,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Icons\" />
+    <Content Include="Resources\1475855919_number-one.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1475855919_number-one.png" />
+    <Resource Include="Resources\1475855926_number-two.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1475855926_number-two.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1475855936_number-three.png" />
+    <Resource Include="Resources\1475855936_number-three.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
