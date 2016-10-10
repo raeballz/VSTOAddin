@@ -40,8 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerations\Gender.cs" />
+    <Compile Include="Enumerations\PatientNumberType.cs" />
+    <Compile Include="Extensions\PersonRecordExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\GenderHelper.cs" />
+    <Compile Include="Interfaces\IPersonRecord.cs" />
+    <Compile Include="Models\Allergy.cs" />
+    <Compile Include="Models\Patient.cs" />
+    <Compile Include="Models\PatientAddress.cs" />
+    <Compile Include="Models\PatientContactInfo.cs" />
+    <Compile Include="Enumerations\PatientDataState.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonContactInfo.cs" />
+    <Compile Include="Models\PostalAddress.cs" />
+    <Compile Include="Models\UniquePatientReference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
