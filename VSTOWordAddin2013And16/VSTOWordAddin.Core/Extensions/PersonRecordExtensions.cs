@@ -7,7 +7,7 @@
 //
 //------------------------------------------------------------------
 
-namespace PatientHub.Framework.Core.Extensions
+namespace VSTOWordAddin.Core.Extensions
 {
     using Interfaces;
 

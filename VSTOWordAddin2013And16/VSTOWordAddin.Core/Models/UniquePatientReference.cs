@@ -7,11 +7,11 @@
 //
 //------------------------------------------------------------------
 
-namespace PatientHub.Framework.Core.Models
+namespace VSTOWordAddin.Core.Models
 {
     using System;
 
-    using PatientHub.Framework.Core.Enumerations;
+    using VSTOWordAddin.Core.Enumerations;
 
     /// <summary>
     /// A patient's number could originate from the NHS numbering system or CHI. To fully identify a patient number you need to know its type.

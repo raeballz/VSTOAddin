@@ -7,7 +7,7 @@
 //
 //------------------------------------------------------------------
 
-namespace PatientHub.Framework.Core.Interfaces
+namespace VSTOWordAddin.Core.Interfaces
 {
     /// <summary>
     /// Interface for items that are person records.

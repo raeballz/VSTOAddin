@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using VSTOWordAddin.Core.Models;
+using System.Runtime.InteropServices;
 
 namespace VSTOWordAddin.Core.Interfaces
 {
@@ -8,5 +9,9 @@ namespace VSTOWordAddin.Core.Interfaces
     public interface IAddInUtilities
     {
         void DisplayMessage();
+
+        void GetPatientData(Patient PatData);
+
+        Patient CurrentPatient { get; set; }
     }
 }
