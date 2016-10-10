@@ -7,7 +7,7 @@
 //
 //------------------------------------------------------------------
 
-namespace PatientHub.Framework.Core.Helpers
+namespace VSTOWordAddin.Core.Helpers
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace PatientHub.Framework.Core.Helpers
     using System.Text;
     using System.Threading.Tasks;
     using System.Xml.Linq;
-    using PatientHub.Framework.Core.Models;
+    using VSTOWordAddin.Core.Models;
 
     /// <summary>
     /// Class containing helper functions for person gender

@@ -46,6 +46,7 @@
     <Compile Include="Extensions\PersonRecordExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\GenderHelper.cs" />
+    <Compile Include="Interfaces\IAddInUtilities.cs" />
     <Compile Include="Interfaces\IPersonRecord.cs" />
     <Compile Include="Models\Allergy.cs" />
     <Compile Include="Models\Patient.cs" />

@@ -7,7 +7,7 @@
 //
 //------------------------------------------------------------------
 
-namespace PatientHub.Framework.Core.Models
+namespace VSTOWordAddin.Core.Models
 {
     using Helpers;
     using Interfaces;
