@@ -7,7 +7,7 @@
 //
 //------------------------------------------------------------------
 
-namespace PatientHub.Framework.Core.Enumerations
+namespace VSTOWordAddin.Core.Enumerations
 {
     /// <summary>
     /// Patient Model States

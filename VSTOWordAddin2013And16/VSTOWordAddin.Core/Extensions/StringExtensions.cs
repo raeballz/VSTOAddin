@@ -3,7 +3,7 @@
 // MvvmCross is licensed using Microsoft Public License (Ms-PL)
 // Copyright (c) Cirrious Ltd. http://www.cirrious.com
 //------------------------------------------------------------------
-namespace PatientHub.Framework.Core.Extensions
+namespace VSTOWordAddin.Core.Extensions
 {
     using System;
     using System.Linq;

@@ -6,7 +6,7 @@
 // Copyright (c) Cirrious Ltd. http://www.cirrious.com
 //
 //------------------------------------------------------------------
-namespace PatientHub.Framework.Core.Models
+namespace VSTOWordAddin.Core.Models
 {
     /// <summary>
     /// An list of genders that a person can have
