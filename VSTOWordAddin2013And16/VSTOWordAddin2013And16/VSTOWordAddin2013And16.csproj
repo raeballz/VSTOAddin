@@ -152,6 +152,7 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="AddInUtilities.cs" />
     <Compile Include="CustomRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
