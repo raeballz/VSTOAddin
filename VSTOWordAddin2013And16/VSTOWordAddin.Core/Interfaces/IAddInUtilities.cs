@@ -8,9 +8,7 @@ namespace VSTOWordAddin.Core.Interfaces
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IAddInUtilities
     {
-        void DisplayMessage();
-
-        void GetPatientData(Patient PatData);
+        void GetPatientData(string PatData);
 
         Patient CurrentPatient { get; set; }
     }

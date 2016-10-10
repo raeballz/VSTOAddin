@@ -3,6 +3,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using VSTOWordAddin.Core.Models;
 using VSTOWordAddin.Core.Interfaces;
+using Newtonsoft.Json;
+using Microsoft.Office.Interop.Word;
 
 namespace VSTOWordAddin2013And16
 {
@@ -13,14 +15,12 @@ namespace VSTOWordAddin2013And16
 
         private Patient currentPatient;
 
-        public void DisplayMessage()
+        public void GetPatientData(string PatData)
         {
-            MessageBox.Show("Hello World!!!! this is an exposed method", "helloWorld");
-        }
+            this.CurrentPatient = JsonConvert.DeserializeObject<Patient>(PatData);
 
-        public void GetPatientData(Patient PatData)
-        {
-            CurrentPatient = PatData;
+            var currentRange = Globals.ThisAddIn.Application.Selection.Range;
+            currentRange.Text = CurrentPatient.FamilyName + currentPatient.Age + CurrentPatient.GivenName + CurrentPatient.ID;
         }
 
         public Patient CurrentPatient
