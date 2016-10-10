@@ -62,6 +62,11 @@
             this.PhoneNumberButton = this.Factory.CreateRibbonButton();
             this.EmailAddressButton = this.Factory.CreateRibbonButton();
             this.MobileTagButton = this.Factory.CreateRibbonButton();
+            this.DocPropTest = this.Factory.CreateRibbonTab();
+            this.PropertyInputGroup = this.Factory.CreateRibbonGroup();
+            this.CustomPropertyInput = this.Factory.CreateRibbonEditBox();
+            this.SaveProperty = this.Factory.CreateRibbonButton();
+            this.CustomPropertyName = this.Factory.CreateRibbonEditBox();
             this.PatientDetailsTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
@@ -73,8 +78,9 @@
             this.group5.SuspendLayout();
             this.AddressGroup.SuspendLayout();
             this.contactDetails.SuspendLayout();
+            this.DocPropTest.SuspendLayout();
+            this.PropertyInputGroup.SuspendLayout();
             this.SuspendLayout();
-            
             // 
             // PatientDetailsTab
             // 
@@ -274,11 +280,50 @@
             this.MobileTagButton.ShowImage = true;
             this.MobileTagButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.MobileTagButton_Click);
             // 
+            // DocPropTest
+            // 
+            this.DocPropTest.Groups.Add(this.PropertyInputGroup);
+            this.DocPropTest.Label = " DOCUMENT PROPERTY TEST";
+            this.DocPropTest.Name = "DocPropTest";
+            // 
+            // PropertyInputGroup
+            // 
+            this.PropertyInputGroup.Items.Add(this.CustomPropertyName);
+            this.PropertyInputGroup.Items.Add(this.CustomPropertyInput);
+            this.PropertyInputGroup.Items.Add(this.SaveProperty);
+            this.PropertyInputGroup.Label = "Input";
+            this.PropertyInputGroup.Name = "PropertyInputGroup";
+            // 
+            // CustomPropertyInput
+            // 
+            this.CustomPropertyInput.Label = "Custom Property Text: ";
+            this.CustomPropertyInput.MaxLength = 255;
+            this.CustomPropertyInput.Name = "CustomPropertyInput";
+            this.CustomPropertyInput.OfficeImageId = "GroupInsertText";
+            this.CustomPropertyInput.ShowImage = true;
+            this.CustomPropertyInput.Text = null;
+            // 
+            // SaveProperty
+            // 
+            this.SaveProperty.Label = "Save Property Text";
+            this.SaveProperty.Name = "SaveProperty";
+            this.SaveProperty.OfficeImageId = "FileSave";
+            this.SaveProperty.ShowImage = true;
+            this.SaveProperty.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SaveProperty_Click);
+            // 
+            // CustomPropertyName
+            // 
+            this.CustomPropertyName.Label = "Custom Property Name";
+            this.CustomPropertyName.Name = "CustomPropertyName";
+            this.CustomPropertyName.OfficeImageId = "AddToFavorites";
+            this.CustomPropertyName.ShowImage = true;
+            // 
             // CustomRibbon
             // 
             this.Name = "CustomRibbon";
             this.RibbonType = "Microsoft.Word.Document";
             this.Tabs.Add(this.PatientPersonalDetails);
+            this.Tabs.Add(this.DocPropTest);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.CustomRibbon_Load);
             this.PatientDetailsTab.ResumeLayout(false);
             this.PatientDetailsTab.PerformLayout();
@@ -302,6 +347,10 @@
             this.AddressGroup.PerformLayout();
             this.contactDetails.ResumeLayout(false);
             this.contactDetails.PerformLayout();
+            this.DocPropTest.ResumeLayout(false);
+            this.DocPropTest.PerformLayout();
+            this.PropertyInputGroup.ResumeLayout(false);
+            this.PropertyInputGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -334,6 +383,11 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton EmailAddressButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton MobileTagButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton AgeButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab DocPropTest;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup PropertyInputGroup;
+        internal Microsoft.Office.Tools.Ribbon.RibbonEditBox CustomPropertyInput;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveProperty;
+        internal Microsoft.Office.Tools.Ribbon.RibbonEditBox CustomPropertyName;
     }
 
     partial class ThisRibbonCollection
