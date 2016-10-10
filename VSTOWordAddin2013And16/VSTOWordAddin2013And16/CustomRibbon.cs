@@ -9,6 +9,7 @@ namespace VSTOWordAddin2013And16
 {
     public partial class CustomRibbon
     {
+        AddInUtilities addin = new AddInUtilities();
 
         private string docText = string.Empty;
 
@@ -95,6 +96,12 @@ namespace VSTOWordAddin2013And16
 
         private void button9_Click(object sender, RibbonControlEventArgs e)
         {
+        }
+
+        private void SaveProperty_Click(object sender, RibbonControlEventArgs e)
+        {
+            string stringToReplaceProperty = this.CustomPropertyInput.Text;
+            addin.ReplaceTestProperty(stringToReplaceProperty);
         }
     }
 }

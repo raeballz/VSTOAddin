@@ -38,30 +38,34 @@
             this.PatientDetailsTab = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
-            this.button1 = this.Factory.CreateRibbonButton();
-            this.button2 = this.Factory.CreateRibbonButton();
-            this.button3 = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
             this.group3 = this.Factory.CreateRibbonGroup();
             this.tab2 = this.Factory.CreateRibbonTab();
             this.tab1 = this.Factory.CreateRibbonTab();
             this.PatientPersonalDetails = this.Factory.CreateRibbonTab();
             this.group6 = this.Factory.CreateRibbonGroup();
-            this.ReplaceTags = this.Factory.CreateRibbonButton();
             this.group4 = this.Factory.CreateRibbonGroup();
+            this.group5 = this.Factory.CreateRibbonGroup();
+            this.AddressGroup = this.Factory.CreateRibbonGroup();
+            this.contactDetails = this.Factory.CreateRibbonGroup();
+            this.DocPropTest = this.Factory.CreateRibbonTab();
+            this.PropertyInputGroup = this.Factory.CreateRibbonGroup();
+            this.CustomPropertyInput = this.Factory.CreateRibbonEditBox();
+            this.ReplaceTags = this.Factory.CreateRibbonButton();
             this.AgeButton = this.Factory.CreateRibbonButton();
             this.DoBButton = this.Factory.CreateRibbonButton();
-            this.group5 = this.Factory.CreateRibbonGroup();
             this.FirstNameButton = this.Factory.CreateRibbonButton();
             this.SecondNameButton = this.Factory.CreateRibbonButton();
             this.ThirdNameButton = this.Factory.CreateRibbonButton();
-            this.AddressGroup = this.Factory.CreateRibbonGroup();
             this.PostCodeButton = this.Factory.CreateRibbonButton();
             this.FullAddressButton = this.Factory.CreateRibbonButton();
-            this.contactDetails = this.Factory.CreateRibbonGroup();
             this.PhoneNumberButton = this.Factory.CreateRibbonButton();
             this.EmailAddressButton = this.Factory.CreateRibbonButton();
             this.MobileTagButton = this.Factory.CreateRibbonButton();
+            this.button1 = this.Factory.CreateRibbonButton();
+            this.button2 = this.Factory.CreateRibbonButton();
+            this.button3 = this.Factory.CreateRibbonButton();
+            this.SaveProperty = this.Factory.CreateRibbonButton();
             this.PatientDetailsTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
@@ -73,8 +77,9 @@
             this.group5.SuspendLayout();
             this.AddressGroup.SuspendLayout();
             this.contactDetails.SuspendLayout();
+            this.DocPropTest.SuspendLayout();
+            this.PropertyInputGroup.SuspendLayout();
             this.SuspendLayout();
-            
             // 
             // PatientDetailsTab
             // 
@@ -98,25 +103,6 @@
             this.buttonGroup1.Items.Add(this.button3);
             this.buttonGroup1.Name = "buttonGroup1";
             this.buttonGroup1.Tag = "Insert Name";
-            // 
-            // button1
-            // 
-            this.button1.Label = "Add Forename";
-            this.button1.Name = "button1";
-            this.button1.ShowImage = true;
-            // 
-            // button2
-            // 
-            this.button2.Label = "Add Middle Name(s)";
-            this.button2.Name = "button2";
-            this.button2.ShowImage = true;
-            // 
-            // button3
-            // 
-            this.button3.Label = "Add Surname";
-            this.button3.Name = "button3";
-            this.button3.ShowImage = true;
-            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
             // 
             // group2
             // 
@@ -154,6 +140,57 @@
             this.group6.Label = "Replace Tags";
             this.group6.Name = "group6";
             // 
+            // group4
+            // 
+            this.group4.Items.Add(this.AgeButton);
+            this.group4.Items.Add(this.DoBButton);
+            this.group4.Label = "Age";
+            this.group4.Name = "group4";
+            // 
+            // group5
+            // 
+            this.group5.Items.Add(this.FirstNameButton);
+            this.group5.Items.Add(this.SecondNameButton);
+            this.group5.Items.Add(this.ThirdNameButton);
+            this.group5.Label = "Name";
+            this.group5.Name = "group5";
+            // 
+            // AddressGroup
+            // 
+            this.AddressGroup.Items.Add(this.PostCodeButton);
+            this.AddressGroup.Items.Add(this.FullAddressButton);
+            this.AddressGroup.Label = "Address";
+            this.AddressGroup.Name = "AddressGroup";
+            // 
+            // contactDetails
+            // 
+            this.contactDetails.Items.Add(this.PhoneNumberButton);
+            this.contactDetails.Items.Add(this.EmailAddressButton);
+            this.contactDetails.Items.Add(this.MobileTagButton);
+            this.contactDetails.Label = "Contact Details";
+            this.contactDetails.Name = "contactDetails";
+            // 
+            // DocPropTest
+            // 
+            this.DocPropTest.Groups.Add(this.PropertyInputGroup);
+            this.DocPropTest.Label = " DOCUMENT PROPERTY TEST";
+            this.DocPropTest.Name = "DocPropTest";
+            // 
+            // PropertyInputGroup
+            // 
+            this.PropertyInputGroup.Items.Add(this.CustomPropertyInput);
+            this.PropertyInputGroup.Items.Add(this.SaveProperty);
+            this.PropertyInputGroup.Label = "Input";
+            this.PropertyInputGroup.Name = "PropertyInputGroup";
+            // 
+            // CustomPropertyInput
+            // 
+            this.CustomPropertyInput.Label = "Custom Property Text: ";
+            this.CustomPropertyInput.MaxLength = 255;
+            this.CustomPropertyInput.Name = "CustomPropertyInput";
+            this.CustomPropertyInput.OfficeImageId = "GroupInsertText";
+            this.CustomPropertyInput.ShowImage = true;
+            // 
             // ReplaceTags
             // 
             this.ReplaceTags.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -161,13 +198,6 @@
             this.ReplaceTags.Name = "ReplaceTags";
             this.ReplaceTags.OfficeImageId = "ReplaceDialog";
             this.ReplaceTags.ShowImage = true;
-            // 
-            // group4
-            // 
-            this.group4.Items.Add(this.AgeButton);
-            this.group4.Items.Add(this.DoBButton);
-            this.group4.Label = "Age";
-            this.group4.Name = "group4";
             // 
             // AgeButton
             // 
@@ -186,14 +216,6 @@
             this.DoBButton.OfficeImageId = "DateAndTimeInsert";
             this.DoBButton.ShowImage = true;
             this.DoBButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button5_Click);
-            // 
-            // group5
-            // 
-            this.group5.Items.Add(this.FirstNameButton);
-            this.group5.Items.Add(this.SecondNameButton);
-            this.group5.Items.Add(this.ThirdNameButton);
-            this.group5.Label = "Name";
-            this.group5.Name = "group5";
             // 
             // FirstNameButton
             // 
@@ -219,13 +241,6 @@
             this.ThirdNameButton.ShowImage = true;
             this.ThirdNameButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ThirdNameButton_Click);
             // 
-            // AddressGroup
-            // 
-            this.AddressGroup.Items.Add(this.PostCodeButton);
-            this.AddressGroup.Items.Add(this.FullAddressButton);
-            this.AddressGroup.Label = "Address";
-            this.AddressGroup.Name = "AddressGroup";
-            // 
             // PostCodeButton
             // 
             this.PostCodeButton.Label = "Insert Post Code Tag";
@@ -241,14 +256,6 @@
             this.FullAddressButton.OfficeImageId = "MailMergeAddressBlockInsert";
             this.FullAddressButton.ShowImage = true;
             this.FullAddressButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.FullAddressButton_Click);
-            // 
-            // contactDetails
-            // 
-            this.contactDetails.Items.Add(this.PhoneNumberButton);
-            this.contactDetails.Items.Add(this.EmailAddressButton);
-            this.contactDetails.Items.Add(this.MobileTagButton);
-            this.contactDetails.Label = "Contact Details";
-            this.contactDetails.Name = "contactDetails";
             // 
             // PhoneNumberButton
             // 
@@ -274,11 +281,39 @@
             this.MobileTagButton.ShowImage = true;
             this.MobileTagButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.MobileTagButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Label = "Add Forename";
+            this.button1.Name = "button1";
+            this.button1.ShowImage = true;
+            // 
+            // button2
+            // 
+            this.button2.Label = "Add Middle Name(s)";
+            this.button2.Name = "button2";
+            this.button2.ShowImage = true;
+            // 
+            // button3
+            // 
+            this.button3.Label = "Add Surname";
+            this.button3.Name = "button3";
+            this.button3.ShowImage = true;
+            this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
+            // 
+            // SaveProperty
+            // 
+            this.SaveProperty.Label = "Save Property Text";
+            this.SaveProperty.Name = "SaveProperty";
+            this.SaveProperty.OfficeImageId = "FileSave";
+            this.SaveProperty.ShowImage = true;
+            this.SaveProperty.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SaveProperty_Click);
+            // 
             // CustomRibbon
             // 
             this.Name = "CustomRibbon";
             this.RibbonType = "Microsoft.Word.Document";
             this.Tabs.Add(this.PatientPersonalDetails);
+            this.Tabs.Add(this.DocPropTest);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.CustomRibbon_Load);
             this.PatientDetailsTab.ResumeLayout(false);
             this.PatientDetailsTab.PerformLayout();
@@ -302,6 +337,10 @@
             this.AddressGroup.PerformLayout();
             this.contactDetails.ResumeLayout(false);
             this.contactDetails.PerformLayout();
+            this.DocPropTest.ResumeLayout(false);
+            this.DocPropTest.PerformLayout();
+            this.PropertyInputGroup.ResumeLayout(false);
+            this.PropertyInputGroup.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -334,6 +373,10 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton EmailAddressButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton MobileTagButton;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton AgeButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab DocPropTest;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup PropertyInputGroup;
+        internal Microsoft.Office.Tools.Ribbon.RibbonEditBox CustomPropertyInput;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton SaveProperty;
     }
 
     partial class ThisRibbonCollection
