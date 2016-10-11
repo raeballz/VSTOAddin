@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Word = Microsoft.Office.Interop.Word;
-
+using VSTOWordAddin.Core.Models;
 
 namespace VSTOWordAddin2013And16
 {
@@ -44,8 +44,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void button5_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTDOB]]";
+            InsertTag(Tags.DOB);
         }
 
         /// <summary>
@@ -55,8 +54,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void AgeButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTAGE]]";
+            InsertTag(Tags.AGE);
         }
 
         /// <summary>
@@ -66,8 +64,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void FirstNameButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTFIRSTNAME]]";
+            InsertTag(Tags.FORENAME);
         }
 
         /// <summary>
@@ -77,8 +74,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void SecondNameButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTMIDDLENAME]]";
+            InsertTag(Tags.FORENAME);
         }
 
         /// <summary>
@@ -88,8 +84,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void ThirdNameButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTSURNAME]]";
+            InsertTag(Tags.SURNAME);
         }
 
         /// <summary>
@@ -99,8 +94,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void PostCodeButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTPOSTCODE]]";
+            InsertTag(Tags.POSTCODE);
         }
 
         /// <summary>
@@ -110,8 +104,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void FullAddressButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTFULLADDRESS]]";
+            InsertTag(Tags.ADDRESS);
         }
 
         /// <summary>
@@ -121,8 +114,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void PhoneNumberButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTPHONENUMBER]]";
+            InsertTag(Tags.PHONENO);
         }
 
         /// <summary>
@@ -132,8 +124,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void EmailAddressButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTEMAILADDRESS]]";
+            InsertTag(Tags.EMAIL);
         }
 
         /// <summary>
@@ -143,12 +134,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void MobileTagButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = "[[PATIENTMOBILENUMBER]]";
-        }
-
-        private void button9_Click(object sender, RibbonControlEventArgs e)
-        {
+            InsertTag(Tags.MOBILENO);
         }
 
         /// <summary>
@@ -163,6 +149,24 @@ namespace VSTOWordAddin2013And16
             string customPropertyName = this.CustomPropertyName.Text;
             string customPropertyValue = this.CustomPropertyInput.Text;
             addin.ReplaceTestProperty(customPropertyName, customPropertyValue);
+        }
+
+        private void ReplaceTags_Click(object sender, RibbonControlEventArgs e)
+        {
+            
+            Globals.ThisAddIn.Application.ActiveDocument.Range().Text = ViewModel.swapTagsForData(Globals.ThisAddIn.Application.ActiveDocument.Range().Text);
+        }
+
+        public void InsertTag(string tag)
+        {
+            Word.Range currentRange = Globals.ThisAddIn.Application.Selection.Range;
+
+            currentRange.Text = tag;
+
+            object what = Word.WdGoToItem.wdGoToPercent;
+            object which = Word.WdGoToDirection.wdGoToLast;
+
+            Globals.ThisAddIn.Application.Selection.GoTo(ref what, ref which);
         }
     }
 }

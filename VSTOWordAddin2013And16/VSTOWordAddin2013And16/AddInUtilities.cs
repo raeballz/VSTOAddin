@@ -21,11 +21,6 @@ namespace VSTOWordAddin2013And16
 
         public void GetPatientData(string PatData)
         {
-            this.CurrentPatient = JsonConvert.DeserializeObject<Patient>(PatData);
-
-            var currentRange = Globals.ThisAddIn.Application.Selection.Range;
-            currentRange.Text = CurrentPatient.FamilyName + currentPatient.Age + CurrentPatient.GivenName + CurrentPatient.ID;
-
             SQLiteConnection con = new SQLiteConnection(@"Data Source=E:\\DataBases\\VSTODB.db;Version=3;New=True;Compress=True;");
             con.Open();
 
