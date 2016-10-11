@@ -1,4 +1,6 @@
-﻿namespace VSTOWordAddin2013And16
+﻿using VSTOWordAddin.Core.ViewModel;
+
+namespace VSTOWordAddin2013And16
 {
     partial class CustomRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
@@ -7,10 +9,11 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public CustomRibbon()
+        private RibbonViewModel viewModel;
 
-            : base(Globals.Factory.GetRibbonFactory())
+        public CustomRibbon(): base(Globals.Factory.GetRibbonFactory())
         {
+            this.ViewModel = new RibbonViewModel();
             InitializeComponent();
         }
 
@@ -25,6 +28,12 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public RibbonViewModel ViewModel
+        {
+            get { return viewModel; }
+            set { viewModel = value; }
         }
 
         #region Component Designer generated code
@@ -64,9 +73,9 @@
             this.MobileTagButton = this.Factory.CreateRibbonButton();
             this.DocPropTest = this.Factory.CreateRibbonTab();
             this.PropertyInputGroup = this.Factory.CreateRibbonGroup();
+            this.CustomPropertyName = this.Factory.CreateRibbonEditBox();
             this.CustomPropertyInput = this.Factory.CreateRibbonEditBox();
             this.SaveProperty = this.Factory.CreateRibbonButton();
-            this.CustomPropertyName = this.Factory.CreateRibbonEditBox();
             this.PatientDetailsTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.buttonGroup1.SuspendLayout();
@@ -167,6 +176,7 @@
             this.ReplaceTags.Name = "ReplaceTags";
             this.ReplaceTags.OfficeImageId = "ReplaceDialog";
             this.ReplaceTags.ShowImage = true;
+            this.ReplaceTags.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ReplaceTags_Click);
             // 
             // group4
             // 
@@ -294,6 +304,14 @@
             this.PropertyInputGroup.Label = "Input";
             this.PropertyInputGroup.Name = "PropertyInputGroup";
             // 
+            // CustomPropertyName
+            // 
+            this.CustomPropertyName.Label = "Custom Property Name";
+            this.CustomPropertyName.Name = "CustomPropertyName";
+            this.CustomPropertyName.OfficeImageId = "AddToFavorites";
+            this.CustomPropertyName.ShowImage = true;
+            this.CustomPropertyName.Text = null;
+            // 
             // CustomPropertyInput
             // 
             this.CustomPropertyInput.Label = "Custom Property Text: ";
@@ -310,13 +328,6 @@
             this.SaveProperty.OfficeImageId = "FileSave";
             this.SaveProperty.ShowImage = true;
             this.SaveProperty.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SaveProperty_Click);
-            // 
-            // CustomPropertyName
-            // 
-            this.CustomPropertyName.Label = "Custom Property Name";
-            this.CustomPropertyName.Name = "CustomPropertyName";
-            this.CustomPropertyName.OfficeImageId = "AddToFavorites";
-            this.CustomPropertyName.ShowImage = true;
             // 
             // CustomRibbon
             // 
@@ -358,7 +369,8 @@
         #endregion
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab PatientDetailsTab;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;        internal Microsoft.Office.Tools.Ribbon.RibbonTab tab2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab tab2;
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
