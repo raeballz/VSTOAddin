@@ -17,7 +17,7 @@ namespace VSTOWordAddin.Core.Models
         public const string FORENAME = "[[PATIENTFIRSTNAME]]";
         public const string AGE = "[[PATIENTAGE]]";
         public const string DOB = "[[PATIENTDOB]]";
-        //public const string MIDDLENAMES = "[[PATIENTMIDDLENAME]]";
+        public const string MIDDLENAMES = "[[PATIENTMIDDLENAME]]";
 
         private List<string> allTags;
 
@@ -32,6 +32,7 @@ namespace VSTOWordAddin.Core.Models
                 POSTCODE,
                 SURNAME,
                 FORENAME,
+                MIDDLENAMES,
                 AGE,
                 DOB
             };
