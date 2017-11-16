@@ -74,7 +74,7 @@ namespace VSTOWordAddin2013And16
         /// <param name="e"></param>
         private void SecondNameButton_Click(object sender, RibbonControlEventArgs e)
         {
-            InsertTag(Tags.FORENAME);
+            InsertTag(Tags.MIDDLENAMES);
         }
 
         /// <summary>
