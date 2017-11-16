@@ -10,6 +10,7 @@
 namespace VSTOWordAddin.Core.Models
 {
     using Helpers;
+    using INPS.Platform.Core.MVVM.Support;
     using Interfaces;
     #region Using statements
 
@@ -21,7 +22,7 @@ namespace VSTOWordAddin.Core.Models
     /// <summary>
     /// Class representing a Person
     /// </summary>
-    public class Person : IPersonRecord
+    public class Person : ObservableObject, IPersonRecord
     {
         #region Private fields
 
@@ -80,15 +81,6 @@ namespace VSTOWordAddin.Core.Models
 
         #endregion Constructors
 
-        #region Events
-
-        /// <summary>
-        /// An event to notify when a property has changed
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        #endregion Events
-
         #region Properties
 
         /// <summary>
@@ -96,16 +88,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string Title
         {
-            get
-            {
-                return this.personTitle;
-            }
-
-            set
-            {
-                this.personTitle = value;
-                this.RaisePropertyChanged("Title");
-            }
+            get { return this.personTitle; }
+            set { this.SetProperty(ref this.personTitle, value, () => this.Title); }
         }
 
         /// <summary>
@@ -113,16 +97,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public Gender PersonGender
         {
-            get
-            {
-                return this.gender;
-            }
-
-            set
-            {
-                this.gender = value;
-                this.RaisePropertyChanged("PersonGender");
-            }
+            get { return this.gender; }
+            set { this.SetProperty(ref this.gender, value, () => this.PersonGender); }
         }
 
         /// <summary>
@@ -130,16 +106,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string FamilyName
         {
-            get
-            {
-                return this.familyName;
-            }
-
-            set
-            {
-                this.familyName = value;
-                this.RaisePropertyChanged("FamilyName");
-            }
+            get { return this.familyName; }
+            set { this.SetProperty(ref this.familyName, value, () => this.FamilyName); }
         }
 
         /// <summary>
@@ -147,35 +115,17 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string GivenName
         {
-            get
-            {
-                return this.givenName;
-            }
-
-            set
-            {
-                this.givenName = value;
-                this.RaisePropertyChanged("GivenName");
-            }
+            get { return this.givenName; }
+            set { this.SetProperty(ref this.givenName, value, () => this.GivenName); }
         }
-
-
 
         /// <summary>
         /// Gets or sets the name by which the person is known as
         /// </summary>
         public string KnownAsName
         {
-            get
-            {
-                return this.knownAsName;
-            }
-
-            set
-            {
-                this.knownAsName = value;
-                this.RaisePropertyChanged("KnownAsName");
-            }
+            get { return this.knownAsName; }
+            set { this.SetProperty(ref this.knownAsName, value, () => this.KnownAsName); }
         }
 
         /// <summary>
@@ -183,16 +133,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public DateTime DateOfBirth
         {
-            get
-            {
-                return this.dateOfBirth;
-            }
-            
-            set
-            {
-                this.dateOfBirth = value;
-                this.RaisePropertyChanged("DateOfBirth");
-            }
+            get { return this.dateOfBirth; }
+            set { this.SetProperty(ref this.dateOfBirth, value, () => this.DateOfBirth); }
         }
 
         /// <summary>
@@ -200,16 +142,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public DateTime DateOfDeath
         {
-            get
-            {
-                return this.dateOfDeath;
-            }
-
-            set
-            {
-                this.dateOfDeath = value;
-                this.RaisePropertyChanged("DateOfDeath");
-            }
+            get { return this.dateOfDeath; }
+            set {this.SetProperty(ref this.dateOfDeath, value, () => this.DateOfDeath); }
         }
 
         /// <summary>
@@ -268,25 +202,6 @@ namespace VSTOWordAddin.Core.Models
                 return GenderHelper.GenderValueToGenderString(this.PersonGender);
             }
         }
-
         #endregion Properties
-
-
-        #region Protected methods
-
-        /// <summary>
-        /// Raises an event when a property changes
-        /// </summary>
-        /// <param name="propertyName">The property changing</param>
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if (propertyChanged != null)
-            {
-                propertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        #endregion Protected methods
     }
 }
