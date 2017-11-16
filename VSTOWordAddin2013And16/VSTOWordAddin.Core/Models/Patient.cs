@@ -110,26 +110,15 @@ namespace VSTOWordAddin.Core.Models
         {
             this.patientAddresses = new List<PatientAddress>();
             this.patientContactDetails = new List<PatientContactInfo>();
-            
         }
-
-
 
         /// <summary>
         /// Gets or sets the internal ID of the patient in the database
         /// </summary>
         public int ID
         {
-            get
-            {
-                return this.id;
-            }
-
-            set
-            {
-                this.id = value;
-                this.RaisePropertyChanged("ID");
-            }
+            get { return this.id; }
+            set { this.SetProperty(ref this.id, value, () => this.ID); }
         }
 
         /// <summary>
@@ -140,15 +129,10 @@ namespace VSTOWordAddin.Core.Models
         /// </value>
         public string NhsNumber
         {
-            get
-            {
-                return this.nhsNumber;
-            }
-
+            get { return this.nhsNumber; }
             set
             {
-                this.nhsNumber = value;
-                this.RaisePropertyChanged("NhsNumber");
+                this.SetProperty(ref this.nhsNumber, value, () => this.NhsNumber);
                 this.RaisePropertyChanged("PatientNumber");
             }
         }
@@ -161,15 +145,10 @@ namespace VSTOWordAddin.Core.Models
         /// </value>
         public string ChiNumber
         {
-            get
-            {
-                return this.chiNumber;
-            }
-
+            get { return this.chiNumber; }
             set
             {
-                this.chiNumber = value;
-                this.RaisePropertyChanged("ChiNumber");
+                this.SetProperty(ref this.chiNumber, value, () => this.ChiNumber);
                 this.RaisePropertyChanged("PatientNumber");
             }
         }
@@ -215,16 +194,8 @@ namespace VSTOWordAddin.Core.Models
         /// </value>
         public string UniqueId
         {
-            get
-            {
-                return this.uniqueId;
-            }
-
-            set
-            {
-                this.uniqueId = value;
-                this.RaisePropertyChanged("UniqueId");
-            }
+            get { return this.uniqueId; }
+            set { this.SetProperty(ref this.uniqueId, value, () => this.UniqueId); }
         }
 
         /// <summary>
@@ -248,16 +219,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string RegisteredGP
         {
-            get
-            {
-                return this.registeredGP;
-            }
-
-            set
-            {
-                this.registeredGP = value;
-                this.RaisePropertyChanged("RegisteredGP");
-            }
+            get { return this.registeredGP; }
+            set { this.SetProperty(ref this.registeredGP, value, () => this.RegisteredGP); }
         }
 
         /// <summary>
@@ -265,16 +228,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string PreferredGP
         {
-            get
-            {
-                return this.preferredGP;
-            }
-
-            set
-            {
-                this.preferredGP = value;
-                this.RaisePropertyChanged("PreferredGP");
-            }
+            get { return this.preferredGP; }
+            set { this.SetProperty(ref this.preferredGP, value, () => this.PreferredGP); }
         }
         
         /// <summary>
@@ -282,16 +237,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string ServiceId
         {
-            get
-            {
-                return this.serviceID;
-            }
-
-            set
-            {
-                this.serviceID = value;
-                this.RaisePropertyChanged("ServiceId");
-            }
+            get { return this.serviceID; }
+            set { this.SetProperty(ref this.serviceID, value, () => this.ServiceId); }
         }
 
         /// <summary>
@@ -299,16 +246,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public List<PatientAddress> PatientAddresses
         {
-            get
-            {
-                return this.patientAddresses;
-            }
-
-            set
-            {
-                this.patientAddresses = value;
-                this.RaisePropertyChanged("PatientAddresses");
-            }
+            get { return this.patientAddresses; }
+            set { this.SetProperty(ref this.patientAddresses, value, () => this.PatientAddresses); }
         }
 
         /// <summary>
@@ -316,16 +255,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public List<PatientContactInfo> PatientContactDetails
         {
-            get
-            {
-                return this.patientContactDetails;
-            }
-
-            set
-            {
-                this.patientContactDetails = value;
-                this.RaisePropertyChanged("PatientContactDetails");
-            }
+            get { return this.patientContactDetails; }
+            set { this.SetProperty(ref this.patientContactDetails, value, () => this.PatientContactDetails); }
         }
 
         /// <summary>
@@ -333,16 +264,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public Allergy.PatientAllergyState PatientAllergyStatus
         {
-            get
-            {
-                return this.patientAllergyStatus;
-            }
-
-            set
-            {
-                this.patientAllergyStatus = value;
-                this.RaisePropertyChanged("PatientAllergyStatus");
-            }
+            get { return this.patientAllergyStatus; }
+            set { this.SetProperty(ref this.patientAllergyStatus, value, () => this.PatientAllergyStatus); }
         }
 
         /// <summary>
@@ -350,16 +273,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public DateTime LastRefreshed
         {
-            get
-            {
-                return this.lastRefreshed;
-            }
-
-            set
-            {
-                this.lastRefreshed = value;
-                this.RaisePropertyChanged("LastRefreshed");
-            }
+            get { return this.lastRefreshed; }
+            set { this.SetProperty(ref this.lastRefreshed, value, () => this.LastRefreshed); }
         }
 
         /// <summary>
@@ -413,16 +328,8 @@ namespace VSTOWordAddin.Core.Models
         /// <summary>Gets or sets the practice id.</summary>
         public string PracticeId
         {
-            get
-            {
-                return this.practiceId;
-            }
-
-            set
-            {
-                this.practiceId = value;
-                this.RaisePropertyChanged("PracticeId");
-            }
+            get { return this.practiceId; }
+            set { this.SetProperty(ref this.practiceId, value, () => this.PracticeId); }
         }
 
         /// <summary>
@@ -430,16 +337,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string RegistrationStatus
         {
-            get
-            {
-                return this.registrationStatus;
-            }
-
-            set
-            {
-                this.registrationStatus = value;
-                this.RaisePropertyChanged("RegistrationStatus");
-            }
+            get { return this.registrationStatus; }
+            set { this.SetProperty(ref this.registrationStatus, value, () => this.RegistrationStatus); }
         }
 
         /// <summary>
@@ -447,16 +346,8 @@ namespace VSTOWordAddin.Core.Models
         /// </summary>
         public string PracticeName
         {
-            get
-            {
-                return this.practiceName;
-            }
-
-            set
-            {
-                this.practiceName = value;
-                this.RaisePropertyChanged("PracticeName");
-            }
+            get { return this.practiceName; }
+            set { this.SetProperty(ref this.practiceName, value, () => this.PracticeName); }
         }
         
         /// <summary>

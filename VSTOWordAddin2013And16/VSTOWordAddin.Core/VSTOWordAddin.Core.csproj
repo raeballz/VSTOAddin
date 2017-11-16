@@ -85,6 +85,9 @@
     <Compile Include="Models\PostalAddress.cs" />
     <Compile Include="Models\Tags.cs" />
     <Compile Include="Models\UniquePatientReference.cs" />
+    <Compile Include="MVVMHelp\IObservableObject.cs" />
+    <Compile Include="MVVMHelp\ObservableObject.cs" />
+    <Compile Include="MVVMHelp\ReflectionSupport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\RibbonViewModel.cs" />
   </ItemGroup>
