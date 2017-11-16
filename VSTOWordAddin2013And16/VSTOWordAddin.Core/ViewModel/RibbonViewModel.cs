@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using VSTOWordAddin.Core.Models;
 
@@ -169,7 +168,8 @@ namespace VSTOWordAddin.Core.ViewModel
 
         private void GetPatient()
         {
-            SQLiteConnection con = new SQLiteConnection(@"Data Source=E:\\DataBases\\VSTODB.db;Version=3;New=True;Compress=True;");
+            string path = $"{Environment.CurrentDirectory}\\..\\..\\VSTODB.db";
+            SQLiteConnection con = new SQLiteConnection($@"Data Source={path};Version=3;New=True;Compress=True;");
             con.Open();
             
             var CMD = new SQLiteCommand("SELECT * FROM patient", con);
