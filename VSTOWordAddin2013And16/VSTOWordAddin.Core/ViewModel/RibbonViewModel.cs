@@ -71,7 +71,7 @@ namespace VSTOWordAddin.Core.ViewModel
                         {
                             if (detail.ContactType == PersonContactInfo.ContactInfoType.PhoneNumber)
                             {
-                                if (detail.ContactDetails.Substring(0, 2).Equals("07"))
+                                if (detail.ContactDescription.Equals("Mobile number"))
                                 {
                                     if (mobileNums.Equals(NODATAOFTYPE))
                                     {
@@ -96,7 +96,7 @@ namespace VSTOWordAddin.Core.ViewModel
                         {
                             if (detail.ContactType == PersonContactInfo.ContactInfoType.PhoneNumber)
                             {
-                                if (detail.ContactDetails.Substring(0, 2).Equals("07"))
+                                if (detail.ContactDescription.Equals("Home number"))
                                 {
                                     if (phoneNums.Equals(NODATAOFTYPE))
                                     {
