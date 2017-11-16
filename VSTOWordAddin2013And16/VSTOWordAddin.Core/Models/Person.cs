@@ -52,6 +52,11 @@ namespace VSTOWordAddin.Core.Models
         private string knownAsName;
 
         /// <summary>
+        /// The middle names
+        /// </summary>
+        private string[] middleNames;
+
+        /// <summary>
         /// The Person's Date of Birth
         /// </summary>
         private DateTime dateOfBirth;
@@ -126,6 +131,18 @@ namespace VSTOWordAddin.Core.Models
         {
             get { return this.knownAsName; }
             set { this.SetProperty(ref this.knownAsName, value, () => this.KnownAsName); }
+        }
+
+        /// <summary>
+        /// Gets or sets the middle names.
+        /// </summary>
+        /// <value>
+        /// The middle names.
+        /// </value>
+        public string[] MiddleNames
+        {
+            get { return this.middleNames; }
+            set { this.SetProperty(ref this.middleNames, value, () => this.MiddleNames); }
         }
 
         /// <summary>

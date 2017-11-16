@@ -213,7 +213,7 @@ namespace VSTOWordAddin2013And16
             // 
             // FirstNameButton
             // 
-            this.FirstNameButton.Label = "Insert First Name Tag";
+            this.FirstNameButton.Label = "Insert Forename";
             this.FirstNameButton.Name = "FirstNameButton";
             this.FirstNameButton.OfficeImageId = "MailMergeGoToFirstRecord";
             this.FirstNameButton.ShowImage = true;
@@ -221,7 +221,7 @@ namespace VSTOWordAddin2013And16
             // 
             // SecondNameButton
             // 
-            this.SecondNameButton.Label = "Insert Second Name Tag";
+            this.SecondNameButton.Label = "Insert Middle names";
             this.SecondNameButton.Name = "SecondNameButton";
             this.SecondNameButton.OfficeImageId = "MailMergeGoToNextRecord";
             this.SecondNameButton.ShowImage = true;
@@ -229,7 +229,7 @@ namespace VSTOWordAddin2013And16
             // 
             // ThirdNameButton
             // 
-            this.ThirdNameButton.Label = "Insert Third Name Tag";
+            this.ThirdNameButton.Label = "Insert Surname";
             this.ThirdNameButton.Name = "ThirdNameButton";
             this.ThirdNameButton.OfficeImageId = "MailMergeGotToLastRecord";
             this.ThirdNameButton.ShowImage = true;

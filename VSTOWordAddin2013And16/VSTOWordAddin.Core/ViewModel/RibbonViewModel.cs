@@ -47,6 +47,15 @@ namespace VSTOWordAddin.Core.ViewModel
                     {
                         return CurrentPatient.FamilyName;
                     }
+                case Tags.MIDDLENAMES:
+                    {
+                        string middleNames = string.Empty;
+                        foreach (string mName in CurrentPatient.MiddleNames)
+                        {
+                            middleNames += $"{mName} ";
+                        }
+                        return middleNames;                        
+                    }
                 case Tags.AGE:
                     {
                         return CurrentPatient.Age.ToString();
